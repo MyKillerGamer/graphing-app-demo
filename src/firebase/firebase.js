@@ -11,9 +11,9 @@ const config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database();
+// const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider;
-console.log("NODE_ENV",process.env.NODE_ENV);
-console.log("API_KEY",process.env.APP_KEY);
+// console.log("NODE_ENV",process.env.NODE_ENV);
+// console.log("API_KEY",process.env.APP_KEY);
 
-export { firebase, googleAuthProvider, database as default };
+export { firebase, googleAuthProvider};

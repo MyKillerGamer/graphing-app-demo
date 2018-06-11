@@ -26,9 +26,9 @@ const renderApp = () => {
     }
 }
 
-firebase.database().ref().set('placeholder');
-console.log("NODE_ENV",process.env.NODE_ENV);
-console.log("API_KEY",process.env.APP_KEY);
+// firebase.database().ref().set('placeholder');
+// console.log("NODE_ENV",process.env.NODE_ENV);
+// console.log("API_KEY",process.env.APP_KEY);
 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
