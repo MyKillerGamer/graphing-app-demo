@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Plot from 'react-plotly.js';
 
 let N = 100;
