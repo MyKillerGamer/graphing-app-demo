@@ -1,18 +1,14 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import DATA from '../data/data.csv';
+import graphSetup from '../graphData/graphSetup';
 
-console.log(DATA);
-const trimmedIncomeData = DATA.map((dataObject) => dataObject.Income);
-console.log(trimmedIncomeData);
-
-export default class LineGraph extends React.Component {
+export default class Histogram extends React.Component {
     constructor(props) {
         super(props)
-        const data = [{ x: trimmedIncomeData, type: 'histogram', mode: 'markers'}];
-        const layout = {width: 600, height: 300, title: 'Plotly Histogram'};
-        const frames = [];
-        const config = {};
+        const data = graphSetup.data;
+        const layout = graphSetup.layout;
+        const frames = graphSetup.frames;
+        const config = graphSetup.config;
         this.state = { data:data, layout:layout, frames:frames, config:config };
     }
     render() {

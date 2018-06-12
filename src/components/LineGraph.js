@@ -3,7 +3,7 @@ import Plot from 'react-plotly.js';
 
 let N = 100;
 
-const testGetRandomData = () => {
+const getRandomData = () => {
     return({
         x: Array.from(new Array(N),(val,index)=>index),
         y: Array.from(new Array(N),(val)=>(Math.floor(Math.random() * 100)))
@@ -13,11 +13,52 @@ const testGetRandomData = () => {
 export default class LineGraph extends React.Component {
     constructor(props) {
         super(props);
-        const data = [{ x:testGetRandomData().y, y: testGetRandomData().y , type: 'scatter', mode: 'markers'}]
-        const layout = {width: 600, height: 300, title: 'Test Plotly'};
-        const frames = [];
-        const config = {};
-        this.state = { data:data, layout:layout, frames:frames, config:config };
+        const figure = {
+            "frames": [], 
+            "layout": {
+                "autosize": true, 
+                "title": "Plotly Test", 
+                "paper_bgcolor": "rgb(255, 255, 255)", 
+                "plot_bgcolor": "rgb(229, 252, 255)", 
+                "yaxis": {
+                    "title": "Y data", 
+                    "range": [
+                        -6.812395309882747, 
+                        104.81239530988275
+                    ], 
+                    "gridcolor": "rgb(196, 144, 209)", 
+                    "showline": false, 
+                    "type": "linear", 
+                    "autorange": true
+                }, 
+                "showlegend": false, 
+                "breakpoints": [], 
+                "xaxis": {
+                    "title": "X data", 
+                    "range": [
+                        -6.104927408710953, 
+                        105.10492740871095
+                    ], 
+                    "zeroline": true, 
+                    "showline": false, 
+                    "type": "linear", 
+                    "autorange": true
+                }, 
+                "hovermode": "closest", 
+                "margin": {
+                    "pad": 10
+                }
+            }, 
+            "data": [
+                {   
+                    "x": getRandomData(),
+                    "y": getRandomData(),
+                    "type": "scatter",
+                    "mode": "markers"
+                }
+            ]
+        }
+        this.state = { data: figure.data, layout: figure.layout, frames:figure.frames, config:config };
     }
     render() {
     return (
@@ -25,7 +66,7 @@ export default class LineGraph extends React.Component {
         <div>
           <div> Dynamic scatter test </div>
           <button className="button"
-            onClick={() => this.setState({data: [{y: testGetRandomData().y, mode: 'markers'}]})}>{'UPDATE DATA'}</button>
+            onClick={() => this.setState({data: [{ x: getRandomData(), y: getRandomData().y, mode: 'markers'}]})}>{'UPDATE DATA'}</button>
         </div>
         <Plot
             data={this.state.data}
