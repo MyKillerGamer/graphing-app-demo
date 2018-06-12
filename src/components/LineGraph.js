@@ -58,7 +58,7 @@ export default class LineGraph extends React.Component {
                 }
             ]
         }
-        this.state = { data: figure.data, layout: figure.layout, frames:figure.frames, config:config };
+        this.state = { data: figure.data, layout: figure.layout, frames:figure.frames};
     }
     render() {
     return (

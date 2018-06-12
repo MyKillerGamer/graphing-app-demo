@@ -9,7 +9,7 @@ const graphSetup = {
         {
             "data": [], 
             "layout": {
-                "autosize": false, 
+                "autosize": true, 
                 "title": "Histogram Example", 
                 "paper_bgcolor": "rgb(255, 255, 255)", 
                 "plot_bgcolor": "rgb(229, 252, 255)", 
@@ -49,7 +49,7 @@ const graphSetup = {
         }
     ],
     "layout": {
-        "autosize": false, 
+        "autosize": true, 
         "bargroupgap": 0, 
         "title": "Histogram example", 
         "paper_bgcolor": "rgb(255, 255, 255)", 
@@ -66,17 +66,6 @@ const graphSetup = {
             "autorange": false
         }, 
         "showlegend": false, 
-        "breakpoints": [
-            {
-                "frame": "workspace-breakpoint-0", 
-                "type": "width", 
-                "range": [
-                    0, 
-                    450
-                ]
-            }
-        ], 
-        "width": 450, 
         "xaxis": {
             "title": "Income Bracket", 
             "zerolinewidth": 3, 
